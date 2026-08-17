@@ -1,0 +1,39 @@
+.my-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.my-shape {
+  position: absolute;
+  display: block;
+  animation-name: oh-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes oh-drift {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotate)) scale(1);
+  }
+  25% {
+    transform: translate(var(--dx), calc(var(--dy) * -1)) rotate(calc(var(--rotate) + 4deg)) scale(1.03);
+  }
+  50% {
+    transform: translate(calc(var(--dx) * -0.6), var(--dy)) rotate(calc(var(--rotate) - 3deg)) scale(0.98);
+  }
+  75% {
+    transform: translate(calc(var(--dx) * 0.4), calc(var(--dy) * -0.4)) rotate(calc(var(--rotate) + 2deg)) scale(1.02);
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--rotate)) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .my-shape {
+    animation: none;
+  }
+}
