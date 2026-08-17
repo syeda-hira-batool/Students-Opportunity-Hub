@@ -1,3 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+#root {
+  height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -94,7 +105,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 
 .my-underline {
   display: block;
-  width: 130px;
+  width: 150px;
   height: 3px;
   margin: 16px 0 18px;
   background: #ff9d9d;
