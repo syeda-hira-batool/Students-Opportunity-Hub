@@ -1,0 +1,188 @@
+.snb-toggle {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #853953;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(133, 57, 83, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.snb-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(133, 57, 83, 0.45);
+}
+.snb-toggle:focus-visible {
+  outline: 2px solid #9bcec1;
+  outline-offset: 3px;
+}
+
+.snb-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.snb-toggle-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.snb-toggle-open span:nth-child(2) {
+  opacity: 0;
+}
+.snb-toggle-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.snb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(27, 30, 43, 0.35);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.snb-overlay-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.snb-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55;
+  width: 280px;
+  max-width: 82vw;
+  height: 100vh;
+  background: #853953;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 88px 0 24px;
+  box-shadow: 12px 0 40px rgba(27, 30, 43, 0.25);
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  font-family: "Inter", sans-serif;
+}
+.snb-panel-open {
+  transform: translateX(0);
+}
+
+.snb-header {
+  padding: 0 28px 20px;
+}
+.snb-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.snb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px;
+}
+.snb-list-scroll {
+  overflow-y: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+.snb-list-scroll::-webkit-scrollbar {
+  display: none; 
+}
+
+.snb-divider {
+  display: block;
+  height: 1px;
+  margin: 12px 28px 14px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.snb-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  margin-bottom: 4px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.snb-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+.snb-item:focus-visible {
+  outline: 2px solid #9bcec1;
+  outline-offset: 2px;
+}
+
+.snb-item-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snb-item-active {
+  background: #ffebd3;
+  color: #1b1e2b;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.snb-item-active:hover {
+  background: #ffebd3;
+  color: #1b1e2b;
+  transform: none;
+}
+
+.snb-item-dashboard {
+  font-weight: 700;
+  background: rgba(255, 235, 211, 0.16);
+  border: 1px solid rgba(255, 235, 211, 0.3);
+}
+.snb-item-dashboard:hover {
+  background: rgba(255, 235, 211, 0.26);
+  color: #ffffff;
+}
+/* when the route is actually /Dashboard, use the same solid cream
+   highlight as any other active item, taking priority over the
+   permanent outline above */
+.snb-item-dashboard.snb-item-active {
+  background: #ffebd3;
+  border-color: transparent;
+  color: #1b1e2b;
+}
+
+@media (max-width: 420px) {
+  .snb-toggle {
+    top: 16px;
+    left: 16px;
+  }
+}
