@@ -1,0 +1,142 @@
+.oc-card {
+  --accent: #9bcec1;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(27, 30, 43, 0.06);
+  box-shadow: 0 8px 20px rgba(30, 40, 60, 0.06);
+  text-decoration: none;
+  color: inherit;
+  font-family: "Inter", sans-serif;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+}
+.oc-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+}
+.oc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(30, 40, 60, 0.12);
+  border-color: var(--accent);
+}
+
+.oc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.oc-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.oc-heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(27, 30, 43, 0.06);
+  color: #5b6272;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.oc-heart:hover {
+  transform: scale(1.08);
+  color: #ff6b6b;
+}
+.oc-heart-active {
+  background: rgba(255, 107, 107, 0.14);
+  color: #ff6b6b;
+}
+.oc-heart-active:hover {
+  color: #ff4f4f;
+}
+
+.oc-type-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 35%, white);
+  color: #1b1e2b;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.oc-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(27, 30, 43, 0.06);
+  color: #1b1e2b;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.oc-card:hover .oc-arrow {
+  transform: translateX(3px) rotate(-4deg);
+  background: var(--accent);
+}
+
+.oc-title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #1b1e2b;
+}
+
+.oc-org {
+  margin: 0;
+  font-size: 13.5px;
+  color: #5b6272;
+  font-weight: 500;
+}
+
+.oc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 2px;
+}
+.oc-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: #4a5064;
+}
+.oc-meta-item svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.oc-eligibility {
+  margin: 4px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(27, 30, 43, 0.12);
+  font-size: 12.5px;
+  color: #5b6272;
+  font-style: italic;
+}
