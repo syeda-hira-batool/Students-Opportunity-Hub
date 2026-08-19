@@ -1,0 +1,108 @@
+.cat-page {
+  --accent: #9bcec1;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.cat-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 110px 32px 100px;
+}
+
+.cat-header {
+  max-width: 62ch;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.cat-eyebrow {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1b1e2b;
+  background: color-mix(in srgb, var(--accent) 45%, white);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.cat-title {
+  font-family: "Space Grotesk", "Georgia", serif;
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.15;
+  color: #1b1e2b;
+  margin: 0 0 12px;
+}
+
+.cat-subtitle {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #5b6272;
+  margin: 0 0 14px;
+}
+
+.cat-count {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #3e8fd6;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cat-empty {
+  max-width: 46ch;
+  margin: 40px auto 0;
+  text-align: center;
+  padding: 48px 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px dashed color-mix(in srgb, var(--accent) 60%, #cfd3dc);
+}
+.cat-empty-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 45%, white);
+  color: #1b1e2b;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.cat-empty h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: #1b1e2b;
+  margin: 0 0 8px;
+}
+.cat-empty p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5b6272;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .cat-main {
+    padding: 96px 20px 72px;
+  }
+}
