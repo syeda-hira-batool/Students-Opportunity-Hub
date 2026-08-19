@@ -11,9 +11,7 @@ Students often have to search through dozens of websites, social media posts, un
 ### Home Page:
 
 <p align="center">
-  <video src="./readMe/vid1.gif" controls width="800">
-    Your browser does not support the video tag.
-  </video>
+  <img src="./readMe/vid1.gif" alt="Students Opportunity Hub Demo" width="800"/>
 </p>
 
 <p align="center">
