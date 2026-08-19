@@ -3,7 +3,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './MyComponents/HomePage'
 import ExplorePage from './MyComponents/ExplorePage'
-
+import AboutPage from './MyComponents/AboutPage'
 import InternshipsPage from './MyComponents/Categories/InternshipsPage'
 import ScholarshipsPage from './MyComponents/Categories/ScholarshipsPage'
 import FellowshipsPage from './MyComponents/Categories/FellowshipsPage'
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ExplorePage" element={<ExplorePage />} />
-        
+        <Route path="/AboutPage" element={<AboutPage />} />
         <Route path="/InternshipsPage" element={<InternshipsPage />} />
         <Route path="/ScholarshipsPage" element={<ScholarshipsPage />} />
         <Route path="/FellowshipsPage" element={<FellowshipsPage />} />

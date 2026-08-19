@@ -1,0 +1,229 @@
+.about-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.about-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 110px 32px 100px;
+}
+
+/* about me */
+.about-me-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 36px;
+  border-radius: 26px;
+  background: linear-gradient(150deg, #a24a68, #853953 55%, #5e2539 120%);
+  box-shadow: 0 20px 44px rgba(133, 57, 83, 0.4);
+  color: #ffffff;
+  margin-bottom: 64px;
+}
+@media (max-width: 640px) {
+  .about-me-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.about-me-avatar {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffebd3;
+  color: #853953;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.about-me-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.about-me-eyebrow {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffebd3;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.about-me-name {
+  font-family: "Space Grotesk", "Georgia", serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.about-me-bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 20px;
+  max-width: 62ch;
+}
+
+.about-me-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .about-me-links {
+    justify-content: center;
+  }
+}
+
+.about-me-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.about-me-link:hover {
+  transform: translateY(-2px);
+}
+.about-me-link-linkedin {
+  background: #ffebd3;
+  color: #853953;
+}
+.about-me-link-linkedin:hover {
+  background: #ffffff;
+}
+.about-me-link-github {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.about-me-link-github:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* about tech */
+.about-tech-header {
+  text-align: center;
+  max-width: 62ch;
+  margin: 0 auto 44px;
+}
+.about-tech-eyebrow {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #853953;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.about-tech-title {
+  font-family: "Space Grotesk", "Georgia", serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 36px);
+  color: #1b1e2b;
+  margin: 0 0 12px;
+}
+.about-tech-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5b6272;
+  margin: 0;
+}
+
+.about-tech-section {
+  margin-bottom: 44px;
+}
+
+.about-tech-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.about-tech-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--section-accent, #853953) 30%, white);
+  color: #1b1e2b;
+}
+.about-tech-section-heading h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: #1b1e2b;
+  margin: 0;
+}
+
+.about-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.about-tech-item {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--section-accent, #853953) 14%, white);
+  border: 1px solid color-mix(in srgb, var(--section-accent, #853953) 30%, white);
+  border-left: 4px solid var(--section-accent, #853953);
+  box-shadow: 0 6px 16px rgba(30, 40, 60, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+.about-tech-item:hover {
+  transform: translateY(-3px);
+  background: color-mix(in srgb, var(--section-accent, #853953) 22%, white);
+  box-shadow: 0 12px 24px rgba(30, 40, 60, 0.12);
+}
+.about-tech-item h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: #1b1e2b;
+  margin: 0 0 6px;
+}
+.about-tech-item p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #5b6272;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .about-main {
+    padding: 96px 20px 72px;
+  }
+}
