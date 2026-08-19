@@ -10,10 +10,10 @@ Students often have to search through dozens of websites, social media posts, un
 
 ### Home Page:
 
-<p align="center">
-  <img src="./readMe/vid1.gif" alt="Students Opportunity Hub Demo" width="800"/>
-</p>
 
+<p align="center">
+  <img src="./readMe/img2.PNG" alt="Students Opportunity Hub Home Page" width="750"/>
+</p>
 <p align="center">
   <img src="./readMe/img2.PNG" alt="Students Opportunity Hub Home Page" width="850"/>
 </p>
