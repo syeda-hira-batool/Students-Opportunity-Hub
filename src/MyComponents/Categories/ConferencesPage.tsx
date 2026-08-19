@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryPageLayout from "../Categorypagelayout";
 import { CATEGORY_ACCENTS } from "../../TsFiles/Categoryaccents";
-import "../CssFiles/ConferencesPage.css";
+
 
 const ConferencesPage: React.FC = () => (
   <CategoryPageLayout

@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryPageLayout from "../Categorypagelayout";
 import { CATEGORY_ACCENTS } from "../../TsFiles/Categoryaccents";
-import "../CssFiles/ExchangeProgramsPage.css";
+
 
 const ExchangeProgramsPage: React.FC = () => (
   <CategoryPageLayout
