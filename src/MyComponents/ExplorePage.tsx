@@ -33,6 +33,10 @@ const ExplorePage: React.FC = () => {
   }, []);
 
   const handleSaveName = () => {
+    if (name.trim().length === 0) {
+      alert("Please enter your name before saving.");
+      return;
+    }
     try {
       localStorage.setItem(NAME_KEY, name.trim());
     } catch {
@@ -47,16 +51,19 @@ const ExplorePage: React.FC = () => {
     [favorites]
   );
 
-  const searchResults = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (q.length < 2) return [];
+  // search + deadline filter now scoped to the saved list, not all opportunities
+  const filteredFavorites = useMemo(() => {
+    let results = favoriteItems;
 
-    let results = OPPORTUNITIES.filter((o) =>
-      [o.title, o.organization, o.type, o.category, o.country]
-        .join(" ")
-        .toLowerCase()
-        .includes(q)
-    );
+    const q = query.trim().toLowerCase();
+    if (q.length > 0) {
+      results = results.filter((o) =>
+        [o.title, o.organization, o.type, o.category, o.country]
+          .join(" ")
+          .toLowerCase()
+          .includes(q)
+      );
+    }
 
     if (deadlineFilter === "dated") {
       results = results
@@ -67,7 +74,19 @@ const ExplorePage: React.FC = () => {
     }
 
     return results;
-  }, [query, deadlineFilter]);
+  }, [favoriteItems, query, deadlineFilter]);
+
+  const handleToggleFavoritesView = () => {
+    setShowFavorites((v) => {
+      const next = !v;
+      if (!next) {
+        // reset search/filter state when the panel closes
+        setQuery("");
+        setDeadlineFilter("all");
+      }
+      return next;
+    });
+  };
 
   return (
     <div className="dash-page">
@@ -80,16 +99,50 @@ const ExplorePage: React.FC = () => {
             <section className="dash-favorites">
               <h2 className="dash-favorites-title">Saved Opportunities</h2>
 
-              {favoriteItems.length > 0 ? (
-                <div className="dash-favorites-grid">
-                  {favoriteItems.map((item) => (
-                    <OpportunityCard
-                      key={item.id}
-                      opportunity={item}
-                      accent={CATEGORY_ACCENTS[item.category]}
+              {favoriteItems.length > 0 && (
+                <div className="dash-search-row dash-search-row-compact">
+                  <div className="dash-search-input-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="7" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Search your saved opportunities..."
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
                     />
-                  ))}
+                  </div>
+
+                  <select
+                    className="dash-deadline-filter"
+                    value={deadlineFilter}
+                    onChange={(e) => setDeadlineFilter(e.target.value as DeadlineFilter)}
+                    aria-label="Filter saved opportunities by deadline"
+                  >
+                    <option value="all">All deadlines</option>
+                    <option value="dated">Has a set deadline</option>
+                    <option value="rolling">Rolling / not specified</option>
+                  </select>
                 </div>
+              )}
+
+              {favoriteItems.length > 0 ? (
+                filteredFavorites.length > 0 ? (
+                  <div className="dash-favorites-grid">
+                    {filteredFavorites.map((item) => (
+                      <OpportunityCard
+                        key={item.id}
+                        opportunity={item}
+                        accent={CATEGORY_ACCENTS[item.category]}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <p className="dash-search-empty">
+                    No saved opportunities match that search or filter.
+                  </p>
+                )
               ) : (
                 <div className="dash-favorites-empty">
                   <div className="dash-favorites-empty-icon">
@@ -129,7 +182,7 @@ const ExplorePage: React.FC = () => {
             <button
               type="button"
               className={`dash-heart-toggle ${showFavorites ? "dash-heart-toggle-active" : ""}`}
-              onClick={() => setShowFavorites((v) => !v)}
+              onClick={handleToggleFavoritesView}
               aria-pressed={showFavorites}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill={showFavorites ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -139,59 +192,6 @@ const ExplorePage: React.FC = () => {
             </button>
           </div>
         </div>
-
-        <section className="dash-search-section">
-          <h2 className="dash-search-title">Search opportunities</h2>
-
-          <div className="dash-search-row">
-            <div className="dash-search-input-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Search hackathons, scholarships, internships..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-            </div>
-
-            <select
-              className="dash-deadline-filter"
-              value={deadlineFilter}
-              onChange={(e) => setDeadlineFilter(e.target.value as DeadlineFilter)}
-              aria-label="Filter by deadline"
-            >
-              <option value="all">All deadlines</option>
-              <option value="dated">Has a set deadline</option>
-              <option value="rolling">Rolling / not specified</option>
-            </select>
-          </div>
-
-          {query.trim().length >= 2 && (
-            <>
-              <p className="dash-search-count">
-                {searchResults.length} result{searchResults.length === 1 ? "" : "s"}
-              </p>
-              {searchResults.length > 0 ? (
-                <div className="dash-search-grid">
-                  {searchResults.map((item) => (
-                    <OpportunityCard
-                      key={item.id}
-                      opportunity={item}
-                      accent={CATEGORY_ACCENTS[item.category]}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <p className="dash-search-empty">
-                  No matches. Try a different keyword or clear the deadline filter.
-                </p>
-              )}
-            </>
-          )}
-        </section>
       </main>
     </div>
   );
