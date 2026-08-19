@@ -161,7 +161,7 @@ The general flow is:
 ```
 
 ---
-## 🔮 Future Improvements
+## Future Improvements:
 
 Some potential improvements for future versions include:
 
