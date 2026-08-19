@@ -47,7 +47,7 @@ Students often have to search through dozens of websites, social media posts, un
 ### Opportunities:
 
 <p align="center">
-  <img src="./readMe/img7.png" alt="Internships Page" width="850"/>
+  <img src="./readMe/img7.PNG" alt="Internships Page" width="850"/>
 </p>
 
 ### About Page:
