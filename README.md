@@ -17,31 +17,31 @@ Students often have to search through dozens of websites, social media posts, un
 </p>
 
 <p align="center">
-  <img src="./ReadMe/img2.png" alt="Students Opportunity Hub Home Page" width="850"/>
+  <img src="./ReadMe/img2.PNG" alt="Students Opportunity Hub Home Page" width="850"/>
 </p>
 
 ### Explore Opportunities:
 
 <p align="center">
-  <img src="./ReadMe/img3.png" alt="Explore Opportunities Page" width="850"/>
+  <img src="./ReadMe/img3.PNG" alt="Explore Opportunities Page" width="850"/>
 </p>
 
 ### Footer:
 
 <p align="center">
-  <img src="./ReadMe/img4.png" alt="Explore Opportunities Page" width="850"/>
+  <img src="./ReadMe/img4.PNG" alt="Explore Opportunities Page" width="850"/>
 </p>
 
 ### DashBoard:
 
 <p align="center">
-  <img src="./ReadMe/img5.png" alt="Opportunity Categories" width="850"/>
+  <img src="./ReadMe/img5.PNG" alt="Opportunity Categories" width="850"/>
 </p>
 
 ### Side Nav Bar:
 
 <p align="center">
-  <img src="./ReadMe/img6.png" alt="Scholarships Page" width="850"/>
+  <img src="./ReadMe/img6.PNG" alt="Scholarships Page" width="850"/>
 </p>
 
 ### Opportunities:
@@ -53,13 +53,13 @@ Students often have to search through dozens of websites, social media posts, un
 ### About Page:
 
 <p align="center">
-  <img src="./ReadMe/img8.png" alt="Explore Opportunities Page" width="850"/>
+  <img src="./ReadMe/img8.PNG" alt="Explore Opportunities Page" width="850"/>
 </p>
 
 ### Features Used:
 
 <p align="center">
-  <img src="./ReadMe/img9.png" alt="Explore Opportunities Page" width="850"/>
+  <img src="./ReadMe/img9.PNG" alt="Explore Opportunities Page" width="850"/>
 </p>
 
 ---
