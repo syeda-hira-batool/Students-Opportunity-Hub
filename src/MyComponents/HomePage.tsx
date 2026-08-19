@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BackgroundPage from "./BackgroundPage";
 import OpportunityHubHero from "./Opportunityhubhero";
@@ -23,8 +23,6 @@ const iconProps = {
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
-
-// these weird numbers are for the logo icons
 
 const OFFERINGS: Offering[] = [
   {
@@ -156,11 +154,25 @@ const OFFERINGS: Offering[] = [
 ];
 
 const HomePage: React.FC = () => {
+  // .my-page is meant to be the ONLY scroll container while this page is
+  // shown -- so lock <html>/<body> scrolling here, and unlock it again the
+  // moment this component unmounts (i.e. the user navigates elsewhere).
+  // Scoping it to this component's lifecycle, instead of a permanent CSS
+  // rule, is what stops it from disabling scroll on every other page.
+  useEffect(() => {
+    document.documentElement.classList.add("home-scroll-lock");
+    document.body.classList.add("home-scroll-lock");
+    return () => {
+      document.documentElement.classList.remove("home-scroll-lock");
+      document.body.classList.remove("home-scroll-lock");
+    };
+  }, []);
+
   return (
     <div className="my-page">
       <BackgroundPage />
 
-      {/* HERO  - section*/}
+      {/* HERO */}
       <section className="my-hero-section" id="home">
         <div className="my-row">
           <div className="my-left">
@@ -172,16 +184,16 @@ const HomePage: React.FC = () => {
 
           <div className="my-right">
             <OpportunityHubHero />
-            <p className="my-caption">up to date opportunities</p>
+            <p className="my-caption">Up to date opportunities</p>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE HAVE - section */}
+      {/* WHAT WE HAVE */}
       <section className="my-offerings-section" id="opportunities">
         <div className="my-offerings-inner">
           <h2 className="my-hook-heading">
-            Great opportunities don't wait, neither should you.
+            Great opportunities don&rsquo;t wait. Neither should you.
           </h2>
           <p className="my-section-label">What we have</p>
 
@@ -206,7 +218,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* EXPLORE CTA  - section */}
+      {/* EXPLORE CTA */}
       <section className="my-explore-section" id="explore">
         <div className="my-explore-row">
           <h2 className="my-explore-heading">

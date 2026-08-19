@@ -1,11 +1,24 @@
-html,
-body {
+/* ------------------------------------------------------------------
+   Scroll lock, SCOPED to HomePage only.
+   .my-page is meant to be the only scroll container while HomePage
+   is on screen. Applying `overflow: hidden` directly to html/body
+   used to do this -- but since CSS imported anywhere in a React SPA
+   stays loaded for the whole session, that rule kept blocking scroll
+   on every other route (Dashboard, category pages) even after
+   navigating away from HomePage.
+
+   Fix: this now only activates via the `.home-scroll-lock` class,
+   which HomePage.tsx adds to <html>/<body> on mount and removes on
+   unmount (see the useEffect there). Every other page is unaffected.
+   ------------------------------------------------------------------ */
+html.home-scroll-lock,
+body.home-scroll-lock {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
 }
-#root {
+body.home-scroll-lock #root {
   height: 100%;
 }
 
@@ -97,7 +110,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 .my-heading {
   font-family: "Space Grotesk", "Georgia", serif;
   font-weight: 700;
-  font-size: clamp(80px, 4vw, 44px);
+  font-size: clamp(30px, 4vw, 44px);
   line-height: 1.15;
   color: #1b1e2b;
   margin: 0;
@@ -105,7 +118,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 
 .my-underline {
   display: block;
-  width: 150px;
+  width: 130px;
   height: 3px;
   margin: 16px 0 18px;
   background: #ff9d9d;
