@@ -84,7 +84,6 @@ Students often have to search through dozens of websites, social media posts, un
 | **React**        | Building the user interface                 |
 | **TypeScript**   | Type-safe development                       |
 | **Vite**         | Development server and build tooling        |
-| **Tailwind CSS** | Utility-first styling                       |
 | **CSS**          | Custom component and page styling           |
 | **React Router** | Client-side page navigation                 |
 | **PapaParse**    | Reading and processing CSV opportunity data |
