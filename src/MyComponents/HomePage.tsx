@@ -184,7 +184,7 @@ const HomePage: React.FC = () => {
 
           <div className="my-right">
             <OpportunityHubHero />
-            <p className="my-caption">Up to date opportunities</p>
+            <p className="my-caption">up to date opportunities</p>
           </div>
         </div>
       </section>
@@ -193,7 +193,7 @@ const HomePage: React.FC = () => {
       <section className="my-offerings-section" id="opportunities">
         <div className="my-offerings-inner">
           <h2 className="my-hook-heading">
-            Great opportunities don&rsquo;t wait. Neither should you.
+            Great opportunities don't wait, neither should you.
           </h2>
           <p className="my-section-label">What we have</p>
 
@@ -222,7 +222,7 @@ const HomePage: React.FC = () => {
       <section className="my-explore-section" id="explore">
         <div className="my-explore-row">
           <h2 className="my-explore-heading">
-            Click the explore button to explore opportunities
+            Explore Now
           </h2>
 
           <Link to="/ExplorePage" className="my-explore-btn">
