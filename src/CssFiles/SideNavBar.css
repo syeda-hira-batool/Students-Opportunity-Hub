@@ -75,6 +75,10 @@
   box-shadow: 12px 0 40px rgba(27, 30, 43, 0.25);
   overflow: hidden;
 
+  /* pushed further than -100% + hidden from the accessibility tree
+     and rendering entirely when closed, so nothing -- not a stray
+     pixel of box-shadow, not a rounding artifact -- can ever peek
+     past the left edge of the viewport */
   transform: translateX(-115%);
   visibility: hidden;
   transition: transform 0.35s ease, visibility 0s linear 0.35s;
@@ -90,11 +94,17 @@
   padding: 0 28px 20px;
 }
 .snb-brand {
+  display: inline-block;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 17px;
   color: #ffffff;
   letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.snb-brand:hover {
+  opacity: 0.8;
 }
 
 .snb-list {

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../CssFiles/SideNavBar.css";
+
+
 
 type NavItem = {
   label: string;
@@ -213,7 +215,9 @@ const SideNavBar: React.FC<SideNavBarProps> = ({ onSelect }) => {
         aria-label="Explore navigation"
       >
         <div className="snb-header">
-          <span className="snb-brand">Opportunity Hub</span>
+          <Link to="/" className="snb-brand" onClick={() => setOpen(false)}>
+            Opportunity Hub
+          </Link>
         </div>
 
         <ul className="snb-list">
