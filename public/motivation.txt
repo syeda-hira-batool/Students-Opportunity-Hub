@@ -1,4 +1,0 @@
-everything works fine for now
-
-
-homePage merged successfullt ---- done!
