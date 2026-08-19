@@ -1,0 +1,6 @@
+/* Internships page — inherits the shared CategoryPage.css layout.
+   This file is for Internships-specific touches only. */
+
+.cat-internships .cat-grid {
+  /* leave room to add category-specific card tweaks later */
+}
