@@ -11,9 +11,7 @@ Students often have to search through dozens of websites, social media posts, un
 ### Home Page:
 
 <p align="center">
-  <video src="./readMe/vid1.gif" controls width="800">
-    Your browser does not support the video tag.
-  </video>
+  <img src="./readMe/vid1.gif" alt="Students Opportunity Hub Demo" width="700"/>
 </p>
 
 <p align="center">
@@ -86,7 +84,6 @@ Students often have to search through dozens of websites, social media posts, un
 | **React**        | Building the user interface                 |
 | **TypeScript**   | Type-safe development                       |
 | **Vite**         | Development server and build tooling        |
-| **Tailwind CSS** | Utility-first styling                       |
 | **CSS**          | Custom component and page styling           |
 | **React Router** | Client-side page navigation                 |
 | **PapaParse**    | Reading and processing CSV opportunity data |
@@ -164,7 +161,7 @@ The general flow is:
 ```
 
 ---
-## 🔮 Future Improvements
+## Future Improvements:
 
 Some potential improvements for future versions include:
 
