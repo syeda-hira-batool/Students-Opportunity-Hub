@@ -4,7 +4,7 @@ import BackgroundPage from "./BackgroundPage";
 import OpportunityHubHero from "./Opportunityhubhero";
 import Footer from "./Footer";
 import "../CssFiles/Background.css";
-import "../CssFiles/OpportunityHubHero.css";
+import "../CssFiles/Opportunityhubhero.css";
 import "../CssFiles/HomePage.css";
 
 type Offering = {
