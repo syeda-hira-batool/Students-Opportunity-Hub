@@ -54,6 +54,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: "Inter", sans-serif;
@@ -66,6 +67,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
   scroll-snap-align: start;
   scroll-snap-stop: always;
   min-height: 100vh;
+  min-height: 100dvh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -107,10 +109,16 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
   }
 }
 
+/* Heading size was bumped up (clamp min raised to 80px), but that had
+   min > max, which is an invalid range -- clamp() just falls back to
+   the min, so the heading rendered at a FIXED 80px on every screen,
+   phones included, and would have overflowed/wrapped badly. Fixed
+   below: 80px is kept as the large desktop size (the max), scaling
+   down smoothly on narrower screens instead of staying fixed. */
 .my-heading {
   font-family: "Space Grotesk", "Georgia", serif;
   font-weight: 700;
-  font-size: clamp(30px, 4vw, 44px);
+  font-size: clamp(44px, 9vw, 80px);
   line-height: 1.15;
   color: #1b1e2b;
   margin: 0;
@@ -118,7 +126,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 
 .my-underline {
   display: block;
-  width: 130px;
+  width: 150px;
   height: 3px;
   margin: 16px 0 18px;
   background: #ff9d9d;
@@ -349,5 +357,24 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
   }
   .my-underline {
     width: 90px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Scroll-snap off on mobile.
+   Strict scroll-snap (mandatory + "always") is unreliable on many
+   mobile browsers with touch/momentum scrolling -- it can lock onto
+   a section and never advance to the next one, which is why the
+   footer was unreachable. Below 780px, fall back to plain vertical
+   scrolling: sections still fill the screen, but nothing can trap
+   the scroll gesture, so the footer is always reachable.
+   ------------------------------------------------------------------ */
+@media (max-width: 780px) {
+  .my-page {
+    scroll-snap-type: none;
+  }
+  .my-page > section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
   }
 }
