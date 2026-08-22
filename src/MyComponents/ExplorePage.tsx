@@ -20,7 +20,7 @@ const ExplorePage: React.FC = () => {
   const [query, setQuery] = useState("");
   const [deadlineFilter, setDeadlineFilter] = useState<DeadlineFilter>("all");
 
-  const { favorites, toggleFavorite } = useFavorites();
+  const { favorites } = useFavorites();
 
   // load saved name on mount
   useEffect(() => {
