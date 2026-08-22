@@ -110,7 +110,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 .my-heading {
   font-family: "Space Grotesk", "Georgia", serif;
   font-weight: 700;
-  font-size: clamp(80px, 4vw, 44px);
+  font-size: clamp(30px, 4vw, 44px);
   line-height: 1.15;
   color: #1b1e2b;
   margin: 0;
@@ -118,7 +118,7 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 
 .my-underline {
   display: block;
-  width: 170px;
+  width: 130px;
   height: 3px;
   margin: 16px 0 18px;
   background: #ff9d9d;
@@ -334,4 +334,20 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
   display: block;
   padding: 0;
   scroll-snap-align: end;
+}
+
+/* small phones */
+@media (max-width: 480px) {
+  .my-hero-section,
+  .my-offerings-section,
+  .my-explore-section {
+    padding: 40px 18px;
+  }
+  .my-explore-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  .my-underline {
+    width: 90px;
+  }
 }

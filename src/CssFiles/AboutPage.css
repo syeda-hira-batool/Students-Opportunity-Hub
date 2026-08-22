@@ -15,7 +15,6 @@
   padding: 110px 32px 100px;
 }
 
-/* about me */
 .about-me-card {
   display: flex;
   align-items: flex-start;
@@ -127,7 +126,6 @@
   background: rgba(255, 255, 255, 0.24);
 }
 
-/* about tech */
 .about-tech-header {
   text-align: center;
   max-width: 62ch;
@@ -224,6 +222,17 @@
 
 @media (max-width: 640px) {
   .about-main {
-    padding: 96px 20px 72px;
+    padding: 96px 16px 72px;
+  }
+  .about-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-me-card {
+    padding: 28px 22px;
+  }
+  .about-me-avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 18px;
   }
 }

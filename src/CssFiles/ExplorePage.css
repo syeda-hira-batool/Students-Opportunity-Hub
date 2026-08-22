@@ -15,9 +15,6 @@
   padding: 110px 32px 100px;
 }
 
-/* ============================================================
-   PROFILE STAGE (square + heart toggle, shifts on toggle)
-   ============================================================ */
 .dash-stage {
   display: flex;
   align-items: flex-start;
@@ -40,8 +37,8 @@
 }
 
 .dash-profile-card {
-  width: 260px;
-  height: 260px;
+  width: min(260px, 78vw);
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,9 +127,6 @@
   color: #ffffff;
 }
 
-/* ============================================================
-   FAVORITES PANEL (left side, appears when heart is toggled)
-   ============================================================ */
 .dash-favorites {
   flex: 1 1 auto;
   min-width: 0;
@@ -181,11 +175,6 @@
   line-height: 1.6;
   color: #5b6272;
 }
-
-/* ============================================================
-   SEARCH / DEADLINE FILTER
-   (rendered inside the favorites panel, only when it's open)
-   ============================================================ */
 
 .dash-search-row {
   display: flex;
@@ -259,6 +248,9 @@
 }
 
 @media (max-width: 780px) {
+  .dash-main {
+    padding: 96px 16px 72px;
+  }
   .dash-stage {
     flex-direction: column;
     align-items: center;
@@ -268,5 +260,15 @@
   }
   .dash-favorites {
     width: 100%;
+  }
+  .dash-favorites-grid,
+  .dash-search-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-search-input-wrap {
+    flex-basis: 100%;
+  }
+  .dash-deadline-filter {
+    flex: 1 1 100%;
   }
 }
