@@ -12,7 +12,7 @@ Students often have to search through dozens of websites, social media posts, un
 <br>
 
 <a href="">
-  <img src="https://img.youtube.com/vi/ZbDDHFKk1RY/maxresdefault.jpg" width="700" alt="Watch Project Demo">
+  <img src="" width="700" alt="Watch Project Demo">
 </a>
 
 ### DashBoard:
