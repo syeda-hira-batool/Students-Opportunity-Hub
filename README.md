@@ -10,25 +10,6 @@ Students often have to search through dozens of websites, social media posts, un
 
 ### Demo:
 
-<p align="center">
-  <img src="./readMe/vid1.gif" alt="Students Opportunity Hub Demo" width="700"/>
-</p>
-
-<p align="center">
-  <img src="./readMe/img2.PNG" alt="Students Opportunity Hub Home Page" width="850"/>
-</p>
-
-### Explore Opportunities:
-
-<p align="center">
-  <img src="./readMe/img3.PNG" alt="Explore Opportunities Page" width="850"/>
-</p>
-
-### Footer:
-
-<p align="center">
-  <img src="./readMe/img4.PNG" alt="Explore Opportunities Page" width="850"/>
-</p>
 
 ### DashBoard:
 
@@ -42,23 +23,6 @@ Students often have to search through dozens of websites, social media posts, un
   <img src="./readMe/img6.PNG" alt="Scholarships Page" width="850"/>
 </p>
 
-### Opportunities:
-
-<p align="center">
-  <img src="./readMe/img7.PNG" alt="Internships Page" width="850"/>
-</p>
-
-### About Page:
-
-<p align="center">
-  <img src="./readMe/img8.PNG" alt="Explore Opportunities Page" width="850"/>
-</p>
-
-### Features Used:
-
-<p align="center">
-  <img src="./readMe/img9.PNG" alt="Explore Opportunities Page" width="850"/>
-</p>
 
 ---
 
