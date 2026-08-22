@@ -14,6 +14,7 @@ Students often have to search through dozens of websites, social media posts, un
 <a href="https://youtu.be/i5jhHqYD1f8?si=oVLytVh2OIGuPnif">
   <img src="https://img.youtube.com/vi/i5jhHqYD1f8/maxresdefault.jpg" width="700" alt="Watch Project Demo">
 </a>
+
 ### DashBoard:
 
 <p align="center">
