@@ -118,8 +118,8 @@ first, then offerings, then the explore CTA (call to action), then the footer â€
 .my-heading {
   font-family: "Space Grotesk", "Georgia", serif;
   font-weight: 700;
-  font-size: clamp(44px, 9vw, 80px);
-  line-height: 1.15;
+  font-size: clamp(44px, 8vw, 100px);
+  line-height: 1.1;
   color: #1b1e2b;
   margin: 0;
 }
