@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PALETTE } from "../TsFiles/Palette";
-import "../CssFiles/OpportunityHubHero.css";
+import "../CssFiles/Opportunityhubhero.css";
 
 /* Loops through three states automatically: search  -> selected  -> celebrate -> repeat */
 

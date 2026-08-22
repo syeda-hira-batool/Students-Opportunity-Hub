@@ -1,7 +1,7 @@
 import React from "react";
 import type { Opportunity } from "../TsFiles/Opportunitiesdata.ts";
 import  { useFavorites } from "../TsFiles/Usefavorites.ts";
-import "../CssFiles/OpportunityCard.css";
+import "../CssFiles/Opportunitycard.css";
 
 type Props = {
   opportunity: Opportunity;
