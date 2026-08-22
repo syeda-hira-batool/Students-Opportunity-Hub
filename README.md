@@ -8,7 +8,7 @@ Students often have to search through dozens of websites, social media posts, un
 
 ## Preview:
 
-### Home Page:
+### Demo:
 
 <p align="center">
   <img src="./readMe/vid1.gif" alt="Students Opportunity Hub Demo" width="700"/>
